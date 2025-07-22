@@ -68,7 +68,7 @@ function StatsGrid() {
           </div>
         </div>
         <p className='text-3xl font-bold text-slate-800'>500</p>
-        <p className='text-xs text-red-600 mb-4'>Needs improvement</p>
+        <p className='text-xs text-red-600 mb-4'>Live</p>
         <div className='mt-3'>
           <div className='h-2 w-full bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden'>
             <div className='h-full w-[40%] bg-gradient-to-r from-red-500 to-red-300 rounded-full transition-all duration-500'></div>
