@@ -16,7 +16,7 @@ function Header() {
               Dashboard
             </h1>
             <p>
-              Welcome Serge, amazing to see you again!
+              Welcome Serge, lets deliver a fair election
             </p>
           </div>
         </div>

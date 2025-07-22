@@ -20,8 +20,8 @@ function Sidebar({ sidebarCollapsed, onToggleSidebar }) {
             {/* conditional rendering */}
             {!sidebarCollapsed && (
               <div>
-                <h1 className='text-xl font-bold text-slate-800 dark:text-white'>
-                  vote
+                <h1 className='text- font-bold text-slate-800 dark:text-white'>
+                  VoteSecure
                 </h1>
                 <p className='text-xs text-slate-500 dark:text-slate-400'>
                   Admin Panel,
