@@ -1,8 +1,15 @@
-import React from 'react'
-import { LayoutDashboard, Users, List, KeyRound, Settings, HelpCircle, LogOut, ClipboardList } from 'lucide-react';
-import { Menu } from 'lucide-react'; // <-- Hamburger icon
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { LayoutDashboard, Users, List, KeyRound, Settings, HelpCircle, LogOut, ClipboardList, Menu } from 'lucide-react';
 
-function Sidebar({ sidebarCollapsed, onToggleSidebar }) {
+function Sidebar({ sidebarCollapsed, onToggleSidebar, currentPage }) {
+  // Helper function to check if link is active
+  const isActive = (path) => currentPage === path;
+
+  const linkBaseClasses = "flex items-center space-x-3 p-2 rounded-lg transition-colors group";
+  const activeClasses = "bg-blue-500 text-white shadow hover:bg-blue-600 hover:ring-2 hover:ring-blue-300";
+  const inactiveClasses = "hover:bg-blue-500 hover:text-white";
+
   return (
     <div className={`transition-all duration-300 ease-in-out bg-white/80 dark:bg-slate-900/80
       backdrop-blur-xl border-r border-slate-200/50 dark:border-slate-700/50 flex flex-col
@@ -17,7 +24,6 @@ function Sidebar({ sidebarCollapsed, onToggleSidebar }) {
               <img src="/vote3.png" alt="Logo" className="w-20 h-20 object-contain" />
             </div>
 
-            {/* conditional rendering */}
             {!sidebarCollapsed && (
               <div>
                 <h1 className='text- font-bold text-slate-800 dark:text-white'>
@@ -30,9 +36,8 @@ function Sidebar({ sidebarCollapsed, onToggleSidebar }) {
             )}
           </div>
 
-          {/* Toggle button */}
           <button onClick={onToggleSidebar} className="p-2.5 rounded-xl text-slate-600 dark:text-slate-300
-        hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+            hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
             <Menu className="w-5 h-5" />
           </button>
         </div>
@@ -41,59 +46,77 @@ function Sidebar({ sidebarCollapsed, onToggleSidebar }) {
       {/* nav bar */}
       <nav className='flex-1 p-4 space-y-2 overflow-auto'>
 
-        {/* Dashboard */}
-        <a href="/dashboard" className="flex items-center space-x-3 p-2 rounded-lg font-bold bg-blue-500 text-white shadow group transition-colors hover:bg-blue-600 hover:ring-2 hover:ring-blue-300">
-          <LayoutDashboard className='w-5 h-5 text-white' />
+        <Link
+          to="/dashboard"
+          className={`${linkBaseClasses} ${isActive('/dashboard') ? activeClasses : inactiveClasses}`}
+        >
+          <LayoutDashboard className={`w-5 h-5 ${isActive('/dashboard') ? 'text-white' : 'text-gray-700 dark:text-gray-300 group-hover:text-white'}`} />
           {!sidebarCollapsed && <span className="font-medium">Dashboard</span>}
-        </a>
+        </Link>
 
-        {/* Voters */}
-        <a href="/voters" className="flex items-center space-x-3 p-2 rounded-lg transition-colors hover:bg-blue-500 hover:text-white group">
-          <Users className='w-5 h-5 text-green-600 dark:text-green-400 group-hover:text-white' />
+        <Link
+          to="/voters"
+          className={`${linkBaseClasses} ${isActive('/voters') ? activeClasses : inactiveClasses}`}
+        >
+          <Users className={`w-5 h-5 ${isActive('/voters') ? 'text-white' : 'text-green-600 dark:text-green-400 group-hover:text-white'}`} />
           {!sidebarCollapsed && <span className="font-medium">Voters</span>}
-        </a>
+        </Link>
 
-        {/* Candidates */}
-        <a href="/candidates" className="flex items-center space-x-3 p-2 rounded-lg transition-colors hover:bg-blue-500 hover:text-white group">
-          <Users className='w-5 h-5 text-yellow-600 dark:text-yellow-400 group-hover:text-white' />
+        <Link
+          to="/candidates"
+          className={`${linkBaseClasses} ${isActive('/candidates') ? activeClasses : inactiveClasses}`}
+        >
+          <Users className={`w-5 h-5 ${isActive('/candidates') ? 'text-white' : 'text-yellow-600 dark:text-yellow-400 group-hover:text-white'}`} />
           {!sidebarCollapsed && <span className="font-medium">Candidates</span>}
-        </a>
+        </Link>
 
-        {/* Elections */}
-        <a href="/elections" className="flex items-center space-x-3 p-2 rounded-lg transition-colors hover:bg-blue-500 hover:text-white group">
-          <List className='w-5 h-5 text-purple-600 dark:text-purple-400 group-hover:text-white' />
+        <Link
+          to="/elections"
+          className={`${linkBaseClasses} ${isActive('/elections') ? activeClasses : inactiveClasses}`}
+        >
+          <List className={`w-5 h-5 ${isActive('/elections') ? 'text-white' : 'text-purple-600 dark:text-purple-400 group-hover:text-white'}`} />
           {!sidebarCollapsed && <span className="font-medium">Elections</span>}
-        </a>
+        </Link>
 
-        {/* Results */}
-        <a href="/results" className="flex items-center space-x-3 p-2 rounded-lg transition-colors hover:bg-blue-500 hover:text-white group">
-          <ClipboardList className='w-5 h-5 text-blue-600 dark:text-blue-400 group-hover:text-white' />
+        <Link
+          to="/results"
+          className={`${linkBaseClasses} ${isActive('/results') ? activeClasses : inactiveClasses}`}
+        >
+          <ClipboardList className={`w-5 h-5 ${isActive('/results') ? 'text-white' : 'text-blue-600 dark:text-blue-400 group-hover:text-white'}`} />
           {!sidebarCollapsed && <span className="font-medium">Results</span>}
-        </a>
+        </Link>
 
-        {/* OTP Management */}
-        <a href="/otp" className="flex items-center space-x-3 p-2 rounded-lg transition-colors hover:bg-blue-500 hover:text-white group">
-          <KeyRound className='w-5 h-5 text-pink-600 dark:text-pink-300 group-hover:text-white' />
+        <Link
+          to="/otp"
+          className={`${linkBaseClasses} ${isActive('/otp') ? activeClasses : inactiveClasses}`}
+        >
+          <KeyRound className={`w-5 h-5 ${isActive('/otp') ? 'text-white' : 'text-pink-600 dark:text-pink-300 group-hover:text-white'}`} />
           {!sidebarCollapsed && <span className="font-medium">OTP Management</span>}
-        </a>
+        </Link>
 
-        {/* Settings */}
-        <a href="/settings" className="flex items-center space-x-3 p-2 rounded-lg transition-colors hover:bg-blue-500 hover:text-white group">
-          <Settings className='w-5 h-5 text-gray-600 dark:text-slate-300 group-hover:text-white' />
+        <Link
+          to="/settings"
+          className={`${linkBaseClasses} ${isActive('/settings') ? activeClasses : inactiveClasses}`}
+        >
+          <Settings className={`w-5 h-5 ${isActive('/settings') ? 'text-white' : 'text-gray-600 dark:text-slate-300 group-hover:text-white'}`} />
           {!sidebarCollapsed && <span className="font-medium">Settings</span>}
-        </a>
+        </Link>
 
-        {/* Support */}
-        <a href="/support" className="flex items-center space-x-3 p-2 rounded-lg transition-colors hover:bg-blue-500 hover:text-white group">
-          <HelpCircle className='w-5 h-5 text-orange-600 dark:text-orange-300 group-hover:text-white' />
+        <Link
+          to="/support"
+          className={`${linkBaseClasses} ${isActive('/support') ? activeClasses : inactiveClasses}`}
+        >
+          <HelpCircle className={`w-5 h-5 ${isActive('/support') ? 'text-white' : 'text-orange-600 dark:text-orange-300 group-hover:text-white'}`} />
           {!sidebarCollapsed && <span className="font-medium">Support</span>}
-        </a>
+        </Link>
 
-        {/* Logout */}
-        <a href="/logout" className="flex items-center space-x-3 p-2 rounded-lg transition-colors hover:bg-red-300 hover:text-white group">
+        <Link
+          to="/logout"
+          className={`${linkBaseClasses} hover:bg-red-300 hover:text-white group rounded-lg flex items-center space-x-3 p-2`}
+        >
           <LogOut className='w-5 h-5 text-red-600 dark:text-red-400 group-hover:text-white' />
           {!sidebarCollapsed && <span className="font-medium">LogOut</span>}
-        </a>
+        </Link>
 
       </nav>
 
@@ -115,8 +138,7 @@ function Sidebar({ sidebarCollapsed, onToggleSidebar }) {
       </div>
 
     </div>
-  )
+  );
 }
 
 export default Sidebar;
-
