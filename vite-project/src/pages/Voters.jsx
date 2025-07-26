@@ -66,6 +66,28 @@ function Voters() {
             <Search className='absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 dark:text-slate-500' />
         </div>
       </div>
+
+      {/* Title */}
+      <h3 className='text-lg font-semibold text-slate-800 dark-text-white mb-2'>
+        Voter List
+      </h3>
+
+      {/* Voter List Table */}
+      <table className='w-full text-left border border-slate-200 dark:border-slate-700'>
+        <thead className='bg-slate-100 dark:bg-slate-800'>
+          <tr>
+            <th className='px-4 py-2'>Name</th>
+            <th className='px-4 py-2'>Email</th>
+            <th className='px-4 py-2'>Voter ID</th>
+            <th className='px-4 py-2'>Region</th>
+            <th className='px-4 py-2'>Status</th>
+            <th className='px-4 py-2'>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
     </div>
   );
 }
