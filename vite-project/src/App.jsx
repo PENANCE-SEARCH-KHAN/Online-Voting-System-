@@ -11,6 +11,8 @@ import Elections from './pages/Elections';
 import Results from './pages/Results';
 import Settings from './pages/Settings';
 import Support from './pages/Support';
+import About from './pages/About';
+
 
 function AppContent() {
   const [sideBarCollapsed, setSideBarCollapsed] = useState(false);
@@ -56,6 +58,8 @@ function AppContent() {
               <Route path="/settings" element={<Settings />} />
               <Route path="/support" element={<Support />} />
               <Route path="/" element={<Dashboard />} />
+              <Route path="/about" element={<About />} />
+
             </Routes>
           </div>
         </main>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { LayoutDashboard, Users, List, KeyRound, Settings, HelpCircle, LogOut, ClipboardList, Menu } from 'lucide-react';
+import { LayoutDashboard, Users, List, Info, Settings, HelpCircle, LogOut, ClipboardList, Menu } from 'lucide-react';
 
 function Sidebar({ sidebarCollapsed, onToggleSidebar, currentPage }) {
   // Helper function to check if link is active
@@ -87,11 +87,11 @@ function Sidebar({ sidebarCollapsed, onToggleSidebar, currentPage }) {
         </Link>
 
         <Link
-          to="/otp"
+          to="/about"
           className={`${linkBaseClasses} ${isActive('/otp') ? activeClasses : inactiveClasses}`}
         >
-          <KeyRound className={`w-5 h-5 ${isActive('/otp') ? 'text-white' : 'text-pink-600 dark:text-pink-300 group-hover:text-white'}`} />
-          {!sidebarCollapsed && <span className="font-medium">OTP Management</span>}
+          <Info className={`w-5 h-5 ${isActive('/otp') ? 'text-white' : 'text-sky-500 dark:text-pink-300 group-hover:text-white'}`} />
+          {!sidebarCollapsed && <span className="font-medium">About</span>}
         </Link>
 
         <Link
