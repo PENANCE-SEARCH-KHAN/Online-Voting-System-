@@ -74,7 +74,7 @@ function About() {
         {/* CTA Card to the right */}
         <div className="bg-indigo-200  dark:bg-indigo-700 rounded-2xl p-6 text-center shadow-lg hover:shadow-xl transition">
           <h2 className="text-2xl font-bold mb-2 text-indigo-700">Ready to Experience Fair & Secure Elections?</h2>
-          <p className="mb-4">Join us today and take part in the future of transparent voting.</p>
+          <p className="mb-4">Join us today and take part in the future of transparent voting</p>
           <button className="bg-white text-indigo-600 font-semibold px-5 py-2 rounded-xl hover:bg-indigo-100 transition">
             Get Started
           </button>
