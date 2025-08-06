@@ -74,7 +74,7 @@ function App() {
         {/* Public Routes - no sidebar/header */}
         <Route path="/auth/register" element={<Register />} />
         <Route path="/auth/login" element={<Login />} />
-        <Route path="/auth/otp-verify" element={<OTPVerify />} />
+        <Route path="/auth/OTPVerify" element={<OTPVerify />} />
 
         {/* Protected Routes - wrapped inside layout */}
         <Route path="/*" element={<AppContent />} />
