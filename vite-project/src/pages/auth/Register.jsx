@@ -27,9 +27,9 @@ function Register() {
         {/* Left section: Form */}
         <div className="p-8 md:p-12">
           {/* Logo and Brand */}
-          <div className="flex items-center mb-6">
+          <div className="flex items-center mb-4">
             <img
-              src="/vote3.png"
+              src="/vote3.png" 
               alt="Logo"
               className="w-10 h-10 rounded-full ring-2 ring-indigo-400 mr-3"
             />
@@ -39,7 +39,7 @@ function Register() {
           <h2 className="text-xl font-bold text-slate-800 dark:text-white mb-1">
             Register Your Account
           </h2>
-          <p className="text-sm text-slate-500 dark:text-slate-300 mb-4">
+          <p className="text-sm text-slate-500 dark:text-slate-300 mb-2">
             Please fill in the form below to create your account.
           </p>
 
@@ -54,7 +54,7 @@ function Register() {
                 name="firstName"
                 value={formData.firstName}
                 onChange={handleChange}
-                className="w-full px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 hover:border-indigo-400 transition"
+                className="w-full px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-white focus:ring-2 focus:ring-indigo-500 outline-none"
                 placeholder="Enter your full name"
                 required
               />
@@ -70,7 +70,7 @@ function Register() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 hover:border-indigo-400 transition"
+                className="w-full px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-white focus:ring-2 focus:ring-indigo-500 outline-none"
                 placeholder="Enter your email"
                 required
               />
@@ -86,7 +86,7 @@ function Register() {
                 name="password"
                 value={formData.password}
                 onChange={handleChange}
-                className="w-full px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 hover:border-indigo-400 transition"
+                className="w-full px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-white focus:ring-2 focus:ring-indigo-500 outline-none"
                 placeholder="Enter password"
                 required
               />
@@ -102,7 +102,7 @@ function Register() {
                 name="confirmPassword"
                 value={formData.confirmPassword}
                 onChange={handleChange}
-                className="w-full px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 hover:border-indigo-400 transition"
+                className="w-full px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-white focus:ring-2 focus:ring-indigo-500 outline-none"
                 placeholder="Confirm password"
                 required
               />
@@ -118,7 +118,7 @@ function Register() {
                 value={formData.role}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 hover:border-indigo-400 transition"
+                className="w-full px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-white focus:ring-2 focus:ring-indigo-500 outline-none"
               >
                 <option value="">Select Role</option>
                 <option value="voter">Voter</option>
@@ -126,22 +126,18 @@ function Register() {
               </select>
             </div>
 
-            {/* Register Button */}
             <Link
-              to="/dashboard"
-              className="block text-center w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 rounded-lg transition"
+            to="/auth/OTPVerify"
+            className="block text-center w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 rounded-lg transition"
             >
-              Register
+               Register
             </Link>
+
           </form>
 
-          {/* Login Prompt */}
-          <p className="text-sm text-slate-500 dark:text-slate-300 mt-5 text-center">
+          <p className="text-sm text-slate-500 dark:text-slate-300 mt-4 text-center">
             Already have an account?{' '}
-            <Link
-              to="/auth/login"
-              className="text-indigo-600 hover:text-indigo-800 dark:hover:text-indigo-400 underline transition"
-            >
+            <Link to="/auth/login" className="text-indigo-600 hover:underline">
               Login here
             </Link>
           </p>
@@ -150,7 +146,7 @@ function Register() {
         {/* Right section: Image with overlay text */}
         <div className="relative h-full">
           <img
-            src="/background.jpg"
+            src="/background.jpg" 
             alt="Voting"
             className="object-cover h-full w-full"
           />
@@ -160,6 +156,7 @@ function Register() {
               <p className="text-sm leading-relaxed">
                 A modern platform for secure and transparent digital voting.
                 Empowering voters and admins with a seamless experience.
+
               </p>
             </div>
           </div>

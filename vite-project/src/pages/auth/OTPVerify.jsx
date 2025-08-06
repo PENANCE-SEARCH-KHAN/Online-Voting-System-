@@ -1,4 +1,5 @@
 import React, {useState} from "react"
+import { Link } from 'react-router-dom';
 
 export default function OTPVerify(){
   const [otp, setOtp] = useState(new Array(6).fill(""))
@@ -50,13 +51,13 @@ export default function OTPVerify(){
               />
             ))}
           </div>
-
-          <button
-          type="submit"
-          className="w-full bg-indigo-600 text-white py-3 rounded-lg hover:bg-indigo-700 transition duration-300 font-semibold"
+          
+          <Link
+          to ="/auth/login"
+          className="w-full bg-indigo-600 text-white text-center py-3 rounded-lg hover:bg-indigo-700 transition duration-300 font-semibold"
           >
             Verify OTP 
-          </button>
+          </Link>
         </form>
 
         <div className="text-center mt-4">
