@@ -6,7 +6,7 @@ function StatsGrid() {
     <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4'>
 
       {/* Card 1 */}
-      <div className='p-4 rounded-2xl bg-white/80 dark:bg-slate-900/80 shadow-xl border border-slate-200 dark:border-slate-700 backdrop-blur-md hover:shadow-2xl hover:scale-[1.02] transition duration-300'>
+      <div className='p-4 rounded-2xl bg-white/80 dark:bg-slate-900/80 shadow-xl border border-slate-200 dark:border-slate-700  hover:shadow-2xl  transition duration-300'>
         <div className='flex items-center justify-between mb-2'>
           <p className='text-sm font-medium text-slate-600 dark:text-slate-400'>Registered Voters</p>
           <div className='w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center'>
@@ -24,7 +24,7 @@ function StatsGrid() {
       </div>
 
       {/* Card 2 */}
-      <div className='p-4 rounded-2xl bg-white/80 dark:bg-slate-900/80 shadow-xl border border-slate-200 dark:border-slate-700 backdrop-blur-md hover:shadow-2xl hover:scale-[1.02] transition duration-300'>
+      <div className='p-4 rounded-2xl bg-white/80 dark:bg-slate-900/80 shadow-xl border border-slate-200 dark:border-slate-700  hover:shadow-2xl  transition duration-300'>
         <div className='flex items-center justify-between mb-2'>
           <p className='text-sm font-medium text-slate-600 dark:text-slate-400'>Candidates</p>
           <div className='w-8 h-8 rounded-full bg-green-100 flex items-center justify-center'>
@@ -42,7 +42,7 @@ function StatsGrid() {
       </div>
 
       {/* Card 3 */}
-      <div className='p-4 rounded-2xl bg-white/80 dark:bg-slate-900/80 shadow-xl border border-slate-200 dark:border-slate-700 backdrop-blur-md hover:shadow-2xl hover:scale-[1.02] transition duration-300'>
+      <div className='p-4 rounded-2xl bg-white/80 dark:bg-slate-900/80 shadow-xl border border-slate-200 dark:border-slate-700  hover:shadow-2xl  transition duration-300'>
         <div className='flex items-center justify-between mb-2'>
           <p className='text-sm font-medium text-slate-600 dark:text-slate-400'>Active Elections</p>
           <div className='w-8 h-8 rounded-full bg-yellow-100 flex items-center justify-center'>
@@ -60,7 +60,7 @@ function StatsGrid() {
       </div>
 
       {/* Card 4 */}
-      <div className='p-4 rounded-2xl bg-white/80 dark:bg-slate-900/80 shadow-xl border border-slate-200 dark:border-slate-700 backdrop-blur-md hover:shadow-2xl hover:scale-[1.02] transition duration-300'>
+      <div className='p-4 rounded-2xl bg-white/80 dark:bg-slate-900/80 shadow-xl border border-slate-200 dark:border-slate-700 hover:shadow-2xl  transition duration-300'>
         <div className='flex items-center justify-between mb-2'>
           <p className='text-sm font-medium text-slate-600 dark:text-slate-400'>Votes Cast</p>
           <div className='w-8 h-8 rounded-full bg-red-100 flex items-center justify-center'>

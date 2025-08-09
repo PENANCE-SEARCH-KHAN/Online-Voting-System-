@@ -83,7 +83,7 @@ function Support() {
       {/* FAQ + Contact Form Cards */}
       <div className="flex flex-col md:flex-row gap-8">
         {/* FAQ Card */}
-        <div className="flex-1 bg-gradient-to-br from-indigo-100 to-white dark:from-slate-800 dark:to-slate-900 backdrop-blur-md shadow-2xl border border-indigo-200 dark:border-slate-700 rounded-2xl p-6 transition hover:scale-[1.01]">
+        <div className="flex-1 bg-gradient-to-br from-indigo-100 to-white dark:from-slate-800 dark:to-slate-900  shadow-2xl border border-indigo-200 dark:border-slate-700 rounded-2xl p-6 transition">
           <h2 className="text-xl font-semibold text-indigo-900 dark:text-white mb-6">
             Frequently Asked Questions
           </h2>
@@ -113,7 +113,7 @@ function Support() {
         </div>
 
         {/* Contact Support Form */}
-        <div className="flex-1 bg-gradient-to-br from-indigo-100 to-white dark:from-slate-800 dark:to-slate-900 backdrop-blur-md shadow-2xl border border-indigo-200 dark:border-slate-700 rounded-2xl p-6 transition hover:scale-[1.01]">
+        <div className="flex-1 bg-gradient-to-br from-indigo-100 to-white dark:from-slate-800 dark:to-slate-900 shadow-2xl border border-indigo-200 dark:border-slate-700 rounded-2xl p-6 transition ">
           <h2 className="text-xl font-semibold text-indigo-900 dark:text-white mb-6">
             Contact Support
           </h2>

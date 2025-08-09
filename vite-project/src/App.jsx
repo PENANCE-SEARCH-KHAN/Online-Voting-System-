@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 
-import Sidebar from './components/layout/sidebar';
-import Header from './components/layout/header';
+import Sidebar from './components/layout/Sidebar';
+import Header from './components/layout/Header';
 import Dashboard from './components/dashboard/Dashboard';
 import Candidates from './pages/Candidates';
 import Voters from './pages/Voters';
