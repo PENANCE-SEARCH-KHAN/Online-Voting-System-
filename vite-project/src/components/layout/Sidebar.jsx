@@ -111,7 +111,7 @@ function Sidebar({ sidebarCollapsed, onToggleSidebar, currentPage }) {
         </Link>
 
         <Link
-          to=""
+          to="/auth/login"
           className={`${linkBaseClasses} hover:bg-red-300 hover:text-white group rounded-lg flex items-center space-x-3 p-2`}
         >
           <LogOut className='w-5 h-5 text-red-600 dark:text-red-400 group-hover:text-white' />

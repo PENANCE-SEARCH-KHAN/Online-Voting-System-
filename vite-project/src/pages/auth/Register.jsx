@@ -29,9 +29,9 @@ function Register() {
           {/* Logo and Brand */}
           <div className="flex items-center mb-4">
             <img
-              src="/vote3.png" 
+              src="/logo1.jpg" 
               alt="Logo"
-              className="w-10 h-10 rounded-full ring-2 ring-indigo-400 mr-3"
+              className="w-10 h-10 rounded-full ring-2  mr-3"
             />
             <span className="text-xl font-bold text-indigo-600 dark:text-indigo-400">VoteSecure</span>
           </div>

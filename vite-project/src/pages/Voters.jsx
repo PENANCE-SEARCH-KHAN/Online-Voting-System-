@@ -268,7 +268,7 @@ function Voters() {
       )}
 
       {/* Popup styles */}
-      <style jsx>{`
+      <style >{`
         .btn-cancel {
           background: #ccc;
           color: #333;

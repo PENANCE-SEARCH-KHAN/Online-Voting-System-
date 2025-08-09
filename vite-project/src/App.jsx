@@ -15,6 +15,8 @@ import About from './pages/About';
 import Register from './pages/auth/Register';
 import Login from './pages/auth/Login';
 import OTPVerify from './pages/auth/OTPVerify';
+import Password from './pages/auth/Password';
+
 
 
 // AppContent contains dashboard layout
@@ -75,6 +77,9 @@ function App() {
         <Route path="/auth/register" element={<Register />} />
         <Route path="/auth/login" element={<Login />} />
         <Route path="/auth/OTPVerify" element={<OTPVerify />} />
+        <Route path="/auth/password" element={<Password />} />
+
+        
 
         {/* Protected Routes - wrapped inside layout */}
         <Route path="/*" element={<AppContent />} />
@@ -82,5 +87,6 @@ function App() {
     </BrowserRouter>
   );
 }
+
 
 export default App;
