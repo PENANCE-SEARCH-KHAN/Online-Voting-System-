@@ -1,14 +1,22 @@
-import React, { useState } from "react";
-import { Search, Bell, Settings, ChevronDown, User, LogOut } from "lucide-react";
 
-const HeaderSection = () => {
+import React, { useState } from "react";
+import { Search, Bell, Settings, ChevronDown, User, LogOut, Menu } from "lucide-react";
+
+const HeaderSection = ({ onToggleSidebar }) => {
   const [showNotifications, setShowNotifications] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
 
   return (
     <header className="flex justify-between items-center bg-white shadow px-6 py-4">
-      {/* Left: title and searchbar */}
+      {/* Left: menu icon, title and searchbar */}
       <div className="flex items-center space-x-6">
+        <button
+          onClick={onToggleSidebar}
+          className="p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+          aria-label="Toggle sidebar"
+        >
+          <Menu className="h-5 w-5 text-gray-600" />
+        </button>
         <div>
           <h1 className="text-xl font-semibold text-slate-800 dark:text-white">Candidates Dashboard</h1>
           <p>Welcome back Serge lets deliver a fair election</p>
