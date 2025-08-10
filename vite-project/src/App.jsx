@@ -11,6 +11,7 @@ import Results from './pages/Results';
 import Settings from './pages/Settings';
 import Support from './pages/Support';
 import About from './pages/About';
+import CandidateDashboard from './pages/CandidateDashboard';
 
 import Register from './pages/auth/Register';
 import Login from './pages/auth/Login';
@@ -78,6 +79,7 @@ function App() {
         <Route path="/auth/login" element={<Login />} />
         <Route path="/auth/OTPVerify" element={<OTPVerify />} />
         <Route path="/auth/password" element={<Password />} />
+        <Route path="/candidate-dashboard" element={<CandidateDashboard />} />
 
         
 
