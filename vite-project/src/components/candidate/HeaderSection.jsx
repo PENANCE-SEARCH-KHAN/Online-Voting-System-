@@ -1,10 +1,24 @@
 
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Search, Bell, Settings, ChevronDown, User, LogOut, Menu } from "lucide-react";
 
 const HeaderSection = ({ onToggleSidebar }) => {
+  const navigate = useNavigate();
   const [showNotifications, setShowNotifications] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
+
+  const handleSettingsClick = () => {
+    navigate('/candidate-dashboard/settings');
+  };
+
+  const handleViewProfile = () => {
+    navigate('/candidate-dashboard/profile');
+  };
+
+  const handleSignOut = () => {
+    navigate('/auth/login');
+  };
 
   return (
     <header className="flex justify-between items-center bg-white shadow px-6 py-4">
@@ -120,7 +134,9 @@ const HeaderSection = ({ onToggleSidebar }) => {
         </div>
 
         {/* Settings */}
-        <button className="p-2 rounded-lg hover:bg-gray-100">
+        <button 
+          onClick={handleSettingsClick}
+          className="p-2 rounded-lg hover:bg-gray-100">
           <Settings className="h-5 w-5 text-gray-600" />
         </button>
 
@@ -150,14 +166,18 @@ const HeaderSection = ({ onToggleSidebar }) => {
               </div>
               
               <div className="py-2">
-                <button className="w-full flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition-colors duration-200">
+                <button
+                onClick={handleViewProfile}
+                 className="w-full flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition-colors duration-200">
                   <User className="h-4 w-4 mr-3 text-gray-500" />
                   <span>View Profile</span>
                 </button>
                 
                 <div className="border-t border-gray-100 my-1"></div>
                 
-                <button className="w-full flex items-center px-4 py-3 text-sm text-red-600 hover:bg-red-50 transition-colors duration-200">
+                <button 
+                  onClick={handleSignOut}
+                  className="w-full flex items-center px-4 py-3 text-sm text-red-600 hover:bg-red-50 transition-colors duration-200">
                   <LogOut className="h-4 w-4 mr-3" />
                   <span>Sign Out</span>
                 </button>
