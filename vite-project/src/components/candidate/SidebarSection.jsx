@@ -15,49 +15,49 @@ const Sidebar = ({ isCollapsed }) => {
   const links = [
     { 
       name: "Dashboard", 
-      path: "/candidate", 
+      path: "/candidate-dashboard", 
       icon: <LayoutDashboard className="h-5 w-5 text-gray-700" />,
       color: "text-blue-500",
       textSize: "text-lg"
     },
     { 
       name: "Elections", 
-      path: "/candidate/elections", 
+      path: "/candidate-dashboard/elections", 
       icon: <BarChart2 className="h-5 w-5 text-purple-600" />,
       color: "text-green-500",
       textSize: "text-lg"
     },
     { 
       name: "MyResults", 
-      path: "/candidate/results", 
+      path: "/candidate-dashboard/results", 
       icon: <Award className="h-5 w-5 text-blue-600" />,
       color: "text-yellow-500",
       textSize: "text-lg"
     },
     { 
       name: "Profile", 
-      path: "/candidate/profile", 
+      path: "/candidate-dashboard/profile", 
       icon: <User className="h-5 w-5 text-green-600" />,
       color: "text-purple-500",
       textSize: "text-lg"
     },
     { 
       name: "About", 
-      path: "/candidate/about", 
+      path: "/candidate-dashboard/about", 
       icon: <Info className="h-5 w-5 text-sky-500" />,
       color: "text-orange-500",
       textSize: "text-lg"
     },
     { 
       name: "Help", 
-      path: "/candidate/help", 
+      path: "/candidate-dashboard/help", 
       icon: <HelpCircle className="h-5 w-5 text-orange-600" />,
       color: "text-teal-500",
       textSize: "text-lg"
     },
     { 
       name: "Settings", 
-      path: "/candidate/settings", 
+      path: "/candidate-dashboard/settings", 
       icon: <Settings className="h-5 w-5 text-gray-600" />,
       color: "text-red-500",
       textSize: "text-lg"
@@ -83,8 +83,8 @@ const Sidebar = ({ isCollapsed }) => {
             className={({ isActive }) =>
               `flex items-center ${isCollapsed ? 'justify-center' : 'space-x-3'} px-4 py-3 rounded-xl font-medium transition-all duration-200 ease-in-out transform hover:scale-[1.02] ${
                 isActive
-                  ? "bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg shadow-blue-200/50"
-                  : "text-gray-600 hover:bg-blue-100 hover:text-gray-900"
+                  ? "text-blue-600 font-semibold"
+                  : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
               }`
             }
           >

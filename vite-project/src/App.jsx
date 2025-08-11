@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 
+// Admin dashboard imports
 import Sidebar from './components/layout/Sidebar';
 import Header from './components/layout/Header';
 import Dashboard from './components/dashboard/Dashboard';
@@ -11,12 +12,23 @@ import Results from './pages/Results';
 import Settings from './pages/Settings';
 import Support from './pages/Support';
 import About from './pages/About';
-import CandidateDashboard from './pages/CandidateDashboard';
 
+// Candidates Dashboard imports
+import CandidateDashboard from './pages/CandidateDashboard';
+import ElectionsPage from './pages/candidate/ElectionsPage';
+import Profile from './pages/candidate/Profile';
+import MyResult from './pages/candidate/MyResult';
+import DashboardPage from './pages/candidate/DashboardPage';
+import AboutPage from './pages/candidate/AboutPage';
+import Help from './pages/candidate/Help';
+import SettingsPage from './pages/candidate/SettingsPage';
+
+// Register, Login, OTP and Forgotten Password imports
 import Register from './pages/auth/Register';
 import Login from './pages/auth/Login';
 import OTPVerify from './pages/auth/OTPVerify';
 import Password from './pages/auth/Password';
+
 
 
 
@@ -79,7 +91,17 @@ function App() {
         <Route path="/auth/login" element={<Login />} />
         <Route path="/auth/OTPVerify" element={<OTPVerify />} />
         <Route path="/auth/password" element={<Password />} />
-        <Route path="/candidate-dashboard" element={<CandidateDashboard />} />
+
+        {/* Candidates Dashboard Routings */}
+        <Route path="/candidate-dashboard" element={<CandidateDashboard />}>
+          <Route index element={<DashboardPage />} />
+          <Route path="elections" element={<ElectionsPage />} />
+          <Route path="results" element={<MyResult />} />
+          <Route path="profile" element={<Profile />} />
+          <Route path="about" element={<AboutPage />} />
+          <Route path="help" element={<Help />} />
+          <Route path="settings" element={<SettingsPage />} />
+        </Route>
 
         
 
