@@ -16,18 +16,29 @@ import About from './pages/About';
 // Candidates Dashboard imports
 import CandidateDashboard from './pages/CandidateDashboard';
 import ElectionsPage from './pages/candidate/ElectionsPage';
-import Profile from './pages/candidate/Profile';
 import MyResult from './pages/candidate/MyResult';
 import DashboardPage from './pages/candidate/DashboardPage';
 import AboutPage from './pages/candidate/AboutPage';
 import Help from './pages/candidate/Help';
 import SettingsPage from './pages/candidate/SettingsPage';
+import Profile from './pages/candidate/Profile';
 
 // Register, Login, OTP and Forgotten Password imports
 import Register from './pages/auth/Register';
 import Login from './pages/auth/Login';
 import OTPVerify from './pages/auth/OTPVerify';
 import Password from './pages/auth/Password';
+
+// User dashboard imports
+import UserDashboard from './pages/UserDashboard';
+import DashboardUser from './pages/users/DashboardUser';
+import UserSettings from './pages/users/UserSettings';
+import UserHelp from './pages/users/UserHelp';
+import Result from './pages/users/Result';
+import UserAbout from './pages/users/UserAbout';
+import VoteCast from './pages/users/VoteCast';
+
+
 
 
 
@@ -97,11 +108,23 @@ function App() {
           <Route index element={<DashboardPage />} />
           <Route path="elections" element={<ElectionsPage />} />
           <Route path="results" element={<MyResult />} />
-          <Route path="profile" element={<Profile />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="help" element={<Help />} />
           <Route path="settings" element={<SettingsPage />} />
+          <Route path="profile" element={<Profile />} />
         </Route>
+
+        {/* User Dashboard Routings */}
+        <Route path="/user-dashboard" element={<UserDashboard />}>
+          <Route index element={<DashboardUser />} />
+          <Route path="user-settings" element={<UserSettings />} />
+          <Route path="user-help" element={<UserHelp />} />
+          <Route path="result" element={<Result />} />
+          <Route path="user-about" element={<UserAbout />} />
+          <Route path="vote-cast" element={<VoteCast />} />
+          
+        </Route>
+
 
         
 

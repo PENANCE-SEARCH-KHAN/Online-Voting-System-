@@ -15,49 +15,43 @@ const Sidebar = ({ isCollapsed }) => {
   const links = [
     { 
       name: "Dashboard", 
-      path: "/candidate-dashboard/", 
+      path: "/user-dashboard", 
       icon: <LayoutDashboard className="h-5 w-5 text-gray-700" />,
       color: "text-blue-500",
       textSize: "text-lg"
     },
     { 
-      name: "Elections", 
-      path: "/candidate-dashboard/elections", 
+      name: "Vote Now", 
+      path: "/user-dashboard/vote-cast", 
       icon: <BarChart2 className="h-5 w-5 text-purple-600" />,
       color: "text-green-500",
       textSize: "text-lg"
     },
     { 
-      name: "MyResults", 
-      path: "/candidate-dashboard/results", 
+      name: "Results", 
+      path: "/user-dashboard/result", 
       icon: <Award className="h-5 w-5 text-blue-600" />,
       color: "text-yellow-500",
       textSize: "text-lg"
     },
-    { 
-      name: "Profile", 
-      path: "/candidate-dashboard/profile", 
-      icon: <User className="h-5 w-5 text-green-600" />,
-      color: "text-purple-500",
-      textSize: "text-lg"
-    },
+    
     { 
       name: "About", 
-      path: "/candidate-dashboard/about", 
+      path: "/user-dashboard/user-about", 
       icon: <Info className="h-5 w-5 text-sky-500" />,
       color: "text-orange-500",
       textSize: "text-lg"
     },
     { 
       name: "Help", 
-      path: "/candidate-dashboard/help", 
+      path: "/user-dashboard/user-help", 
       icon: <HelpCircle className="h-5 w-5 text-orange-600" />,
       color: "text-teal-500",
       textSize: "text-lg"
     },
     { 
       name: "Settings", 
-      path: "/candidate-dashboard/settings", 
+      path: "/user-dashboard/user-settings", 
       icon: <Settings className="h-5 w-5 text-gray-600" />,
       color: "text-red-500",
       textSize: "text-lg"
