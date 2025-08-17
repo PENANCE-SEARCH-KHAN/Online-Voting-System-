@@ -114,7 +114,7 @@ function CandidateDashboard() {
         </div>
       </div>
 
-      {/* 📈 Live Vote Chart with Election Selection */}
+      {/*  Live Vote Chart with Election Selection */}
       <div className="bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100">
         <div className="flex justify-between items-center mb-6">
           <h3 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
@@ -159,17 +159,11 @@ function CandidateDashboard() {
         </div>
       </div>
 
-      {/* 📅 Upcoming Events */}
+      {/*  Upcoming Events */}
       <div className="bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100">
         <h3 className="text-xl font-bold mb-6 bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">Upcoming Events</h3>
         <ul className="space-y-4">
-          <li className="flex justify-between items-center p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200">
-            <div className="flex items-center space-x-3">
-              <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-              <span className="text-sm font-medium text-gray-700">Final Debate</span>
-            </div>
-            <span className="text-sm text-gray-500 font-medium bg-blue-50 px-3 py-1 rounded-full">Aug 15, 2025</span>
-          </li>
+
           <li className="flex justify-between items-center p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200">
             <div className="flex items-center space-x-3">
               <div className="w-2 h-2 bg-green-500 rounded-full"></div>
@@ -177,6 +171,7 @@ function CandidateDashboard() {
             </div>
             <span className="text-sm text-gray-500 font-medium bg-green-50 px-3 py-1 rounded-full">Aug 20, 2025</span>
           </li>
+
           <li className="flex justify-between items-center p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200">
             <div className="flex items-center space-x-3">
               <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
@@ -184,6 +179,7 @@ function CandidateDashboard() {
             </div>
             <span className="text-sm text-gray-500 font-medium bg-purple-50 px-3 py-1 rounded-full">Aug 22, 2025</span>
           </li>
+          
         </ul>
       </div>
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   BarChart,
   Bar,
@@ -8,7 +8,7 @@ import {
   ResponsiveContainer,
   Label,
 } from 'recharts';
-import { BarChart2 } from 'lucide-react';
+import { BarChart2, ChevronDown } from 'lucide-react';
 
 // Sample data
 const data = [
@@ -59,6 +59,17 @@ function ElectionProgressCard() {
 
 // MAIN CHART COMPONENT
 function RevenueChart() {
+  const [selectedElection, setSelectedElection] = useState('presidential');
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const electionTypes = [
+    { value: 'presidential', label: 'Presidential Election' },
+    { value: 'governor', label: 'Governor Election' },
+    { value: 'senate', label: 'Senate Election' },
+    { value: 'house', label: 'House of Representatives' },
+    { value: 'local', label: 'Local Government' }
+  ];
+
   return (
     <div className='flex gap-4'>
       {/* Main Chart Container */}
@@ -73,6 +84,38 @@ function RevenueChart() {
             </p>
           </div>
           <div className='flex items-center space-x-4'>
+            {/* Election Type Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setShowDropdown(!showDropdown)}
+                className="flex items-center space-x-2 px-3 py-2 bg-slate-100 hover:bg-slate-200 rounded-lg text-sm font-medium text-slate-700 transition-colors"
+              >
+                <span>{electionTypes.find(e => e.value === selectedElection)?.label}</span>
+                <ChevronDown size={16} className={`transition-transform ${showDropdown ? 'rotate-180' : ''}`} />
+              </button>
+              
+              {showDropdown && (
+                <div className="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-slate-200 z-10">
+                  <div className="py-1">
+                    {electionTypes.map((election) => (
+                      <button
+                        key={election.value}
+                        onClick={() => {
+                          setSelectedElection(election.value);
+                          setShowDropdown(false);
+                        }}
+                        className={`w-full text-left px-4 py-2 text-sm hover:bg-slate-100 transition-colors ${
+                          selectedElection === election.value ? 'bg-blue-50 text-blue-700 font-medium' : 'text-slate-700'
+                        }`}
+                      >
+                        {election.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
             <div className='flex items-center space-x-2'>
               <div className='w-6 h-6 rounded-full bg-gradient-to-tr from-blue-500 to-purple-600 flex items-center justify-center shadow-lg'>
                 <BarChart2 size={16} className='text-white' />

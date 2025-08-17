@@ -16,6 +16,53 @@ export default function OTPVerify(){
     }
   };
 
+  const handleKeyDown = (e, index) => {
+    const newOtp = [...otp];
+    
+    // Handle backspace
+    if (e.key === 'Backspace') {
+      if (newOtp[index] !== '') {
+        // If current input has value, clear it
+        newOtp[index] = '';
+        setOtp(newOtp);
+      } else if (index > 0) {
+        // If current input is empty, move to previous input and clear it
+        newOtp[index - 1] = '';
+        setOtp(newOtp);
+        const prevInput = e.target.previousElementSibling;
+        if (prevInput) prevInput.focus();
+      }
+    }
+    
+    // Handle arrow keys for navigation
+    if (e.key === 'ArrowLeft' && index > 0) {
+      const prevInput = e.target.previousElementSibling;
+      if (prevInput) prevInput.focus();
+    }
+    if (e.key === 'ArrowRight' && index < 5) {
+      const nextInput = e.target.nextElementSibling;
+      if (nextInput) nextInput.focus();
+    }
+    
+    // Handle paste
+    if (e.key === 'v' && e.ctrlKey) {
+      // Allow paste functionality
+      return;
+    }
+  };
+
+  const handlePaste = (e) => {
+    e.preventDefault();
+    const pasteData = e.clipboardData.getData('text');
+    if (pasteData && /^\d{6}$/.test(pasteData)) {
+      const newOtp = pasteData.split('');
+      setOtp(newOtp);
+      // Focus the last input
+      const inputs = document.querySelectorAll('input[type="text"]');
+      if (inputs[5]) inputs[5].focus();
+    }
+  };
+
   const handleSubmit = (e) =>  {
     e.preventDefault();
     alert(`Enter OTP is ${otp.join("")}`);
@@ -47,7 +94,9 @@ export default function OTPVerify(){
                 maxLength="1"
                 value={data}
                 onChange={(e) => handleChange(e.target, index)}
-                className="w-12 h-12 text-center text-xl font-bold border border-gray-300 rounded-lg focus:outline-none focus;ring-2 focus:ring-indigo-500"
+                onKeyDown={(e) => handleKeyDown(e, index)}
+                onPaste={handlePaste}
+                className="w-12 h-12 text-center text-xl font-bold border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
             ))}
           </div>
@@ -67,14 +116,8 @@ export default function OTPVerify(){
               Resend OTP
             </button>
           </p>
-          <p className=" text-gray-600  text-sm">
-            <a href="/login" className="text-indigo-600 hover:underline">
-              Back to Login
-            </a>
-          </p>
         </div>
       </div>
     </div>
   );
 }
-

@@ -1,16 +1,40 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
-
-
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function LoginPage() {
   const [role, setRole] = useState("voter");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({ role, email, password });
+    
+    // Basic validation
+    if (!email.trim()) {
+      alert("Email is required");
+      return;
+    }
+    
+    if (role !== "candidate" && !password.trim()) {
+      alert("Password is required");
+      return;
+    }
+
+    console.log('Login attempt:', { role, email, password: role === "candidate" ? 'N/A' : password });
+    
+    // Store user info in localStorage for demo
+    localStorage.setItem('userRole', role);
+    localStorage.setItem('userEmail', email);
+    
+    // Navigate based on role using React Router with if statements
+    if (role === "candidate") {
+      navigate("/candidate-dashboard");
+    } else if (role === "admin") {
+      navigate("/dashboard");
+    } else {
+      navigate("/user-dashboard");
+    }
   };
 
   return (
@@ -63,42 +87,48 @@ export default function LoginPage() {
             />
           </div>
 
-          {/* Password Field */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Password
-            </label>
-            <input
-              type="password"
-              required
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              placeholder="Enter your password"
-            />
-          </div>
+          {/* Password Field - Hide for candidate role */}
+          {role !== "candidate" && (
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Password
+              </label>
+              <input
+                type="password"
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                placeholder="Enter your password"
+              />
+            </div>
+          )}
 
           {/* Submit Button */}
-          <Link
-            to="/dashboard"
-            className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-43 py-3 rounded-md transition duration-300 shadow-md"
-            >
+          <button
+            type="submit"
+            className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-4 py-3 rounded-md transition duration-300 shadow-md"
+          >
             Login
-          </Link>
+          </button>
         </form>
 
         {/* Links */}
-        <div className="text-sm text-center text-gray-600">
-          <a href="/auth/password" className="text-indigo-600 hover:underline">
-            Forgot password?
-          </a>
-        </div>
-        <div className="text-sm text-center text-gray-600">
-          Don’t have an account?{" "}
-          <Link to="/auth/register" className="text-indigo-600 hover:underline">
-            Register
-          </Link>
-        </div>
+        {role !== "candidate" && (
+          <>
+            <div className="text-sm text-center text-gray-600">
+              <a href="/auth/password" className="text-indigo-600 hover:underline">
+                Forgot password?
+              </a>
+            </div>
+            <div className="text-sm text-center text-gray-600">
+              Don’t have an account?{" "}
+              <Link to="/auth/register" className="text-indigo-600 hover:underline">
+                Register
+              </Link>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

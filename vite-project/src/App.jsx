@@ -75,6 +75,7 @@ function AppContent() {
         <main className="flex-1 overflow-y-auto bg-transparent">
           <div className="p-6 space-y-6">
             <Routes>
+              <Route path="/" element={<Dashboard />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/candidates" element={<Candidates />} />
               <Route path="/voters" element={<Voters />} />
@@ -83,7 +84,6 @@ function AppContent() {
               <Route path="/settings" element={<Settings />} />
               <Route path="/support" element={<Support />} />
               <Route path="/about" element={<About />} />
-              <Route path="/" element={<Dashboard />} />
             </Routes>
           </div>
         </main>
@@ -128,6 +128,9 @@ function App() {
 
         
 
+        {/* Default route - show register page first */}
+        <Route path="/" element={<Register />} />
+        
         {/* Protected Routes - wrapped inside layout */}
         <Route path="/*" element={<AppContent />} />
       </Routes>
